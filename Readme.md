@@ -2,10 +2,5 @@
 
 # ReadMe
 
-Gamingbud wird eine Webseite sein, die es einfach macht, andere Spieler und Teams zu finden und mit ihnen zu spielen.
+gamingbud wird eine Webseite sein, die es einfach macht, andere Spieler und Teams zu finden und mit ihnen zu spielen. (NUR FÜR WARZONE CoD)....
 
-Matchmaking-Algorithmus:
-
-1. Profil erstellen
-2. Connect your games
-3. Matchmaking based on your profile
