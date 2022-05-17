@@ -45,5 +45,4 @@ public class PersonRestController {
         boolean successful = personService.deleteById(id);
         return successful? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
     }
-
 }
