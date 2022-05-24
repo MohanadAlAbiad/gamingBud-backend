@@ -1,17 +1,23 @@
 package de.htwberlin.webtech.gamingBud.gaming.api;
 
+import java.util.List;
+
 public class Person {
 
     private long id;
     private String firstName;
     private String lastName;
+    private String gender;
     private boolean vaccinated;
+    private List<Long> pets;
 
-    public Person(long id, String firstName, String lastName, boolean vaccinated) {
+    public Person(long id, String firstName, String lastName, String gender, boolean vaccinated, List<Long> pets) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.gender = gender;
         this.vaccinated = vaccinated;
+        this.pets = pets;
     }
 
     public long getId() {
@@ -44,5 +50,21 @@ public class Person {
 
     public void setVaccinated(boolean vaccinated) {
         this.vaccinated = vaccinated;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public List<Long> getPets() {
+        return pets;
+    }
+
+    public void setPets(List<Long> pets) {
+        this.pets = pets;
     }
 }

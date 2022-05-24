@@ -1,6 +1,8 @@
 package de.htwberlin.webtech.gamingBud.gaming.api.persistence;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity(name = "persons")
 public class PersonEntity {
@@ -19,18 +21,21 @@ public class PersonEntity {
     @Column(name = "is_vaccinated")
     private Boolean vaccinated;
 
-    @Column(name = "test")
-    private String testColumn;
+    @Column(name = "gender")
+    @Enumerated(value = EnumType.STRING)
+    private Gender gender;
 
+    @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER)
+    private List<PetEntity> pets = new ArrayList<>();
 
-    public PersonEntity(String firstName, String lastName, Boolean vaccinated) {
+    public PersonEntity(String firstName, String lastName, Boolean vaccinated, Gender gender) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.vaccinated = vaccinated;
+        this.gender = gender;
     }
 
-    protected PersonEntity() {
-    }
+    protected PersonEntity() {}
 
     public Long getId() {
         return id;
@@ -60,11 +65,19 @@ public class PersonEntity {
         this.vaccinated = vaccinated;
     }
 
-    public String getTestColumn() {
-        return testColumn;
+    public Gender getGender() {
+        return gender;
     }
 
-    public void setTestColumn(String testColumn) {
-        this.testColumn = testColumn;
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public List<PetEntity> getPets() {
+        return pets;
+    }
+
+    public void setPets(List<PetEntity> pets) {
+        this.pets = pets;
     }
 }
